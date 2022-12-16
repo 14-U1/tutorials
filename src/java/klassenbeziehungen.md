@@ -1,4 +1,4 @@
-# Klasssenbeziehungen
+# Klassenbeziehungen
 Die folgenden Beispiel Klassen wurden nur vereinfacht implementiert. Echte Klassen haben weitere Attribute, andere Zugriffsmodifikatior und Konstruktoren. Auch Namen ändern sich.
 Hier ist eine gute quelle: [Klassenbeziehungen uni-leipzig](https://www.informatik.uni-leipzig.de/~stjaenicke/mup1/s2.pdf)
   
