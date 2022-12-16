@@ -1,0 +1,6 @@
+[book]
+authors = ["Florian", "Moritz", "Felix"]
+language = "de"
+multilingual = false
+src = "src"
+title = "Tutorials"
