@@ -8,3 +8,4 @@
 - [Schleifen](./java/schleifen.md)
 - [Klassenbeziehungen](./java/klassenbeziehungen.md)
 - [Generalisierung 2](./java/Generalisierung.md)
+- [Definitionen](.java/Definitionen.md)
