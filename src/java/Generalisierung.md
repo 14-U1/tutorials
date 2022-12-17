@@ -1,6 +1,6 @@
 # Generalisierung und Spezialisierung Beispiel 2
 ## Generalisierung:
-PKW, LKW -> Fahrzeug
+PKW, LKW → Fahrzeug
   
 ```java
 //Oberklasse:
@@ -39,7 +39,7 @@ class PKW extends Fahrzeug {
 ```
   
 ## Spezialisierung:
-Haus -> Schule, Krankenhaus
+Haus → Schule, Krankenhaus
   
 ```java
 //Oberklasse
@@ -78,4 +78,5 @@ class Krankenhaus extends Haus {
 ```
   
   
-> Beides ist das Gleiche. Spezialisierung kann auch als generalisierung angesehen werden. Die Implementation ist identisch. <br>Spezialisierung -> Eine Klasse, die in mehrere spezialisiert wird<br>Generalisierung -> mehrere Klassen die in eine vereinfacht/zusammengefasst werden (diese Klasse hat dann die gemeinsamen Attribute und Methoden)
+> Beides ist das Gleiche. Spezialisierung kann auch als Generalisierung angesehen werden. Die Implementation ist identisch. <br>Spezialisierung → Eine Klasse, die in mehrere spezialisiert wird.<br>
+Generalisierung → mehrere Klassen die in eine vereinfacht/zusammengefasst werden (diese Klasse hat dann die gemeinsamen Attribute und Methoden)
