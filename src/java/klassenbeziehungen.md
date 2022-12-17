@@ -39,7 +39,7 @@ class Haus {
 ```
 Das Raum-Objekt wird innerhalb des Konstruktors der Haus-Klasse erzeugt. So muss kein Objekt übergeben werden, und jedes Haus erstellt automatisch ein Raum. Ein Haus kann instanziiert werden durch dem Konstruktor: `new Haus();`.
   
-# Generalisierung und spezialisierung
+# Generalisierung und Spezialisierung
 Generalisierung und Spezialisierung sind 2 Wege, um Klassen zu vereinfachen.
 Beispielsweise haben wir eine `Küche` Klasse und eine `Wohnzimmer` Klasse.<br>
 Beides sind Klassen, die wir Zusammenfassen könnten. Schließlich sind ja beides Räume.<br>
@@ -50,7 +50,7 @@ class Raum {
     int tueren;
 }
 ```
-Bisher noch nichts neues.<br>
+Bisher noch nichts Neues.<br>
 Wir wollen aber nicht, das ein "Raum" Objekt erstellt werden kann. Diese Klasse soll ja nur als Vereinfachung der Unterklassen [`Kueche` und `Wohnzimmer`] dienen. Deshalb machen wir die Klasse `abstract`.
 ```java
 abstract class Raum {...}
