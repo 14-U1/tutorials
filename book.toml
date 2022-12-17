@@ -4,3 +4,8 @@ language = "de"
 multilingual = false
 src = "src"
 title = "Tutorials"
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/14-U1/tutorials/"
+site-url = "/tutorials/"
