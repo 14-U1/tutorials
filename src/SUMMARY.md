@@ -10,3 +10,5 @@
 - [abstrakte Klassen 2](./java/AbstrakteKlassen.md)
 - [Generalisierung 2](./java/Generalisierung.md)
 - [Definitionen](./java/Definitionen.md)
+- [Arrays](./java/Arrays.md)
+
