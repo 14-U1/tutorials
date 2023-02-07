@@ -63,7 +63,7 @@ int[] einArray = new int[]{1, 2, 3};
 int erstesElement = einArray[0];
 ```
 
-Das erste Element ist hat einen Index von `0`, das zweite einen von `1`, usw.
+Das erste Element hat einen Index von `0`, das zweite einen von `1`, usw.
 
 ## Veränderung der Elemente
 
