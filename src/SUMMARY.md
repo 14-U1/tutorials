@@ -2,13 +2,15 @@
 
 [Startseite](./index.md)
 
-# Java
+# Informatik
 
-- [Basics](./java/java-basics.md)
-- [Schleifen](./java/schleifen.md)
-- [Klassenbeziehungen](./java/klassenbeziehungen.md)
-- [abstrakte Klassen 2](./java/AbstrakteKlassen.md)
-- [Generalisierung 2](./java/Generalisierung.md)
-- [Definitionen](./java/Definitionen.md)
-- [Arrays](./java/Arrays.md)
+- [Java]()
+    - [Basics](./informatik/java/java-basics.md)
+    - [Schleifen](./informatik/java/schleifen.md)
+    - [Klassenbeziehungen](./informatik/java/klassenbeziehungen.md)
+    - [Abstrakte Klassen 2](./informatik/java/abstrakte-klassen.md)
+    - [Generalisierung 2](./informatik/java/generalisierung.md)
+    - [Definitionen](./informatik/java/definitionen.md)
+    - [Arrays](./informatik/java/arrays.md)
+- [Lexikon](./informatik/lexikon.md)
 

@@ -8,8 +8,10 @@ Verschiedene Typen haben verschiedene Standardwerte, die genutzt werden, wenn ma
 |short  |`0`                       |
 |int    |`0`                       |
 |long   |`0`                       |
+|float  |`0.0`                     |
+|double |`0.0`                     |
 |boolean|`false`                   |
-|char   |`0`                       |
+|char   |`0` (nicht das Zeichen 0) |
 |Objekt |`null` (Zeiger auf nichts)|
 
 ## Erstellung
