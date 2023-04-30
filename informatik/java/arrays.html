@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="de" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Arrays - Tutorials</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Startseite</a></li><li class="chapter-item expanded affix "><li class="part-title">Informatik</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Java</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../informatik/java/java-basics.html"><strong aria-hidden="true">1.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../../informatik/java/schleifen.html"><strong aria-hidden="true">1.2.</strong> Schleifen</a></li><li class="chapter-item expanded "><a href="../../informatik/java/klassenbeziehungen.html"><strong aria-hidden="true">1.3.</strong> Klassenbeziehungen</a></li><li class="chapter-item expanded "><a href="../../informatik/java/abstrakte-klassen.html"><strong aria-hidden="true">1.4.</strong> Abstrakte Klassen 2</a></li><li class="chapter-item expanded "><a href="../../informatik/java/generalisierung.html"><strong aria-hidden="true">1.5.</strong> Generalisierung 2</a></li><li class="chapter-item expanded "><a href="../../informatik/java/definitionen.html"><strong aria-hidden="true">1.6.</strong> Definitionen</a></li><li class="chapter-item expanded "><a href="../../informatik/java/arrays.html" class="active"><strong aria-hidden="true">1.7.</strong> Arrays</a></li></ol></li><li class="chapter-item expanded "><a href="../../informatik/lexikon.html"><strong aria-hidden="true">2.</strong> Lexikon</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tutorials</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/14-U1/tutorials/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="standardwerte"><a class="header" href="#standardwerte">Standardwerte</a></h2>
+<p>Verschiedene Typen haben verschiedene Standardwerte, die genutzt werden, wenn man ihnen keinen konkreten Wert zugewiesen hat. Hier eine Tabelle mit den Standardwerten:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Typ</th><th>Standardwert</th></tr></thead><tbody>
+<tr><td style="text-align: center">byte</td><td><code>0</code></td></tr>
+<tr><td style="text-align: center">short</td><td><code>0</code></td></tr>
+<tr><td style="text-align: center">int</td><td><code>0</code></td></tr>
+<tr><td style="text-align: center">long</td><td><code>0</code></td></tr>
+<tr><td style="text-align: center">float</td><td><code>0.0</code></td></tr>
+<tr><td style="text-align: center">double</td><td><code>0.0</code></td></tr>
+<tr><td style="text-align: center">boolean</td><td><code>false</code></td></tr>
+<tr><td style="text-align: center">char</td><td><code>0</code> (nicht das Zeichen 0)</td></tr>
+<tr><td style="text-align: center">Objekt</td><td><code>null</code> (Zeiger auf nichts)</td></tr>
+</tbody></table>
+</div>
+<h2 id="erstellung"><a class="header" href="#erstellung">Erstellung</a></h2>
+<p>Ein leeres Array, bei dem der Speicherplatz mit dem Standardwert des Typen initialisiert wird, erstellt man so:</p>
+<pre><code class="language-java">Typ[] einArray = new Typ[10];
+</code></pre>
+<p>Das obere Array hat die Länge 10.
+Wenn der Typ zum Beispiel <code>int</code> wäre, hätte jedes Element des Arrays nun den Wert <code>0</code>.</p>
+<h3 id="alternative-1"><a class="header" href="#alternative-1">Alternative 1</a></h3>
+<p>Alternativ kann man direkt Werte für das zu erstellende Array angeben:</p>
+<pre><code class="language-java">einArray = new int[]{1, 2, 3};
+</code></pre>
+<p>Das obere Array hat die Länge 3.</p>
+<h3 id="alternative-2"><a class="header" href="#alternative-2">Alternative 2</a></h3>
+<p>Bei der Deklaration einer Variable kann bei <a href="#alternative-1">Alternative 1</a> das <code>new Typ[]</code> weggelassen werden:</p>
+<pre><code class="language-java">int[] einAnderesArray = {5, 10, 15};
+</code></pre>
+<p>Das obere Array hat die Länge 3.</p>
+<h2 id="länge"><a class="header" href="#länge">Länge</a></h2>
+<p>Um im Nachhin ein auf die Länge des Arrays zuzugreifen kann man auf das Attribut <code>length</code> des Arrays zugreifen:</p>
+<pre><code class="language-java">int[] einArray = new int[7];
+int laenge = einArray.length; // 7
+</code></pre>
+<p>Die Länge des Arrays kann nicht im Nachhinein verändert werden.</p>
+<h2 id="zugriff-auf-elemente"><a class="header" href="#zugriff-auf-elemente">Zugriff auf Elemente</a></h2>
+<p>Auf die Elemente des Arrays kann so zugegriffen werden:</p>
+<pre><code class="language-java">int[] einArray = new int[]{1, 2, 3};
+int erstesElement = einArray[0];
+</code></pre>
+<p>Das erste Element hat einen Index von <code>0</code>, das zweite einen von <code>1</code>, usw.</p>
+<h2 id="veränderung-der-elemente"><a class="header" href="#veränderung-der-elemente">Veränderung der Elemente</a></h2>
+<p>Um Elemente in dem Array zu verändern muss bei dem Zugriff ein neuer Wert gesetzt werden:</p>
+<pre><code class="language-java">int[] einArray = new int[]{1, 4, 3};
+einArray[1] = 2;
+</code></pre>
+<p><code>einArray</code> enspricht nun <code>{1, 2, 3}</code>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../informatik/java/definitionen.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../informatik/lexikon.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../informatik/java/definitionen.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../informatik/lexikon.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
